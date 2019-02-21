@@ -29,7 +29,7 @@ function fillCardTemplate(pokemon) {
 }
 
 function alphabeticalOrder() {
-  let sortedPokemon = dataLovers.getAllPokemon.sort(function(prev, next) {
+  let sortedPokemon = dataLovers.getAllPokemon().sort(function(prev, next) {
     if (prev.name > next.name) {
       return 1;
     }
@@ -44,15 +44,16 @@ function alphabeticalOrder() {
 
 document.getElementById("btn1").addEventListener("click", mostrar);
 document.getElementById("btn2").addEventListener("click", ocultar);
+document.getElementById("orderABC").addEventListener("click", alphabeticalOrder);
 
 function mostrar() {
-  document.getElementById("content").style.display = "block";
-  document.getElementById("Ocultar").style.display = "none";
+  document.getElementById("pokedex").style.display = "block";
+  document.getElementById("ocultar").style.display = "none";
 }
 
 function ocultar() {
-  document.getElementById("content").style.display = "none";
-  document.getElementById("Ocultar").style.display = "block";
+  document.getElementById("pokedex").style.display = "none";
+  document.getElementById("ocultar").style.display = "block";
 }
 
 //llenar con lista default de pokemon
