@@ -1,8 +1,18 @@
 .card {
     float: left;
-    margin: 5px;
+    margin: 10px;
+    background: #DCDCDC;
+
+}
+
+.card:hover{
+
+background:#D3D3D3; 
+
 }
 
 #content {
     padding: 20px 40px 20px 40px;
 }
+
+
