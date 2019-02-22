@@ -1,14 +1,20 @@
+
+html{
+    background-image: url("imagenes pokemon/pokemon collage.jpg");
+}
+
+body {
+    background: rgb(240,248,255,0.5);
+}
+
 .card {
     float: left;
     margin: 10px;
     background: #DCDCDC;
-
 }
 
 .card:hover{
-
 background:#D3D3D3; 
-
 }
 
 #content {

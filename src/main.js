@@ -16,6 +16,7 @@ let content = document.getElementById("content");
 function displayPokemonCards(pokemonArray) {
   let listHtml = pokemonArray.map(pokemon => fillCardTemplate(pokemon));
   
+  
   content.innerHTML = listHtml;
 }
 
