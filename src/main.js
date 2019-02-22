@@ -15,8 +15,8 @@ let content = document.getElementById("content");
 
 function displayPokemonCards(pokemonArray) {
   let listHtml = pokemonArray.map(pokemon => fillCardTemplate(pokemon));
-  let htmlString = listHtml.join(" ");
-  content.innerHTML = htmlString;
+  
+  content.innerHTML = listHtml;
 }
 
 function fillCardTemplate(pokemon) {
@@ -42,9 +42,26 @@ function alphabeticalOrder() {
   displayPokemonCards(sortedPokemon);
 }
 
+function numericalOrder() {
+
+  let numPokemon = dataLovers.getAllPokemon().sort(function(prev, next) {
+    if (prev.num > next.num) {
+      return 1;
+    }
+    if (prev.num < next.num) {
+      return -1;
+    }
+    return 0;
+  });
+  displayPokemonCards(numPokemon); 
+}
+
+
+
 document.getElementById("btn1").addEventListener("click", mostrar);
 document.getElementById("btn2").addEventListener("click", ocultar);
 document.getElementById("orderABC").addEventListener("click", alphabeticalOrder);
+document.getElementById("orderNum").addEventListener("click",numericalOrder );
 
 function mostrar() {
   document.getElementById("pokedex").style.display = "block";
