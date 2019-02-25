@@ -29,11 +29,12 @@ header {
     margin: auto;
     border-radius: 15px;
     padding: 10px; 
+    overflow: auto;
 }
 header img {
 float:right;
-height:110px;
-width: 600px;
+width: 263px;
+max-width: 50%;
 }
 div.ordenar {
     text-align: center;
