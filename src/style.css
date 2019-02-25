@@ -3,48 +3,108 @@ html{
     background-image: url("imagenes pokemon/pokemon collage.jpg");
 }
 
+body {
+  padding: 10px 5px;
+}
+
 .card:hover{
 background:#D3D3D3; 
 }
 
 #content {
     background: rgb(240, 248, 255,0.5);
-    height: 1600vmax;
+    /*height: 1100em;*/
     text-align: center;
     margin: auto 5%;
     border-radius: 25px;
     padding: 30px 40px 30px 40px;
 }
 
-.card {
-    float: left;
-    margin: 20px;
-    background:rgb(255, 255, 255);
-    opacity: 100%;
-    padding: 10px 40px;
-    border-radius: 15px;
-}
 header {
-    background: rgb(35, 20, 20,0.5);
-    margin: auto;
-    border-radius: 15px;
-    padding: 10px; 
+  background: rgb(35, 20, 20,0.5);
+  margin: auto;
+  border-radius: 15px;
+  padding: 10px; 
+
 }
-header img {
-float:right;
-height:110px;
-width: 600px;
-}
-div.ordenar {
+
+/*header img {
+  float:right;
+  height:110px;
+  width: 600px;
+  }*/
+
+  div.ordenar {
     text-align: center;
     background:rgb(255,255,255,0.5);
     border-radius: 15px;
     padding:13px;
     font-size: 20px;
-    font-family:cursive;
+    font-family:cursive, sans-serif;
+    font-weight: bolder;
     margin: auto 5%;
     margin-top: 5%;
     border: 2px solid black;
     }
+
+.card {
+    background:rgb(255, 255, 255);
+    opacity: 100%;
+    padding: 10px 40px;
+    border-radius: 15px;
+    max-height: 200px;
+}
+
+.pkm-thmb {
+  height: 50%;
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    /* z-index: 1;  Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgb(0, 0, 0, 0.5); /* Black w/ opacity */
+}
+/* Modal Header */
+.modal-header {
+  padding: 1px 16px;
+  background-color: #d8ecd8;
+  color: rgb(3, 3, 3);
+}
+/* Modal Body */
+.modal-body {
+  padding: 2px 16px;
+}
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    font-family: cursive, sans-serif;
+  }
+  /* The Close Button */
+.close {
+    color: rgb(37, 35, 35);
+    float: right;
+    font-size: 28px;
+    font-weight: bolder;
+  }
+.close:hover,
+.close:focus {
+  color: red;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 
 

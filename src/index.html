@@ -1,50 +1,81 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+
+<head>
+  <meta charset="utf-8" />
+
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+  <div id="root" class="container">
+    <a id="inicio"></a>
+
     
-    <div id="root">
-      <a id="inicio"></a>
+    <header class="row">
+        <img class="col-3" src="imagenes pokemon/pokemon txt.png" alt="texto POKEMON">
 
-      <header>
-        <a href="#contenido" ><input type="image" id="btn1" src="imagenes pokemon/Pokeball.png" width="100px" /></a>
-        
-        <a href="#inicio"><input type="image" id="btn2" src="imagenes pokemon/home-2.png"
-          width="100px"/></a>
-        <img src="imagenes pokemon/pokemon txt.png" alt="texto POKEMON">
-      </header>    
 
-      <div id="ocultar" style="display:block;">
+
+
+      <div class="col-3">
+        <a href="#contenido"><input type="image" id="btn1" src="imagenes pokemon/Pokeball.png" width="100px" /></a>
+
+        <a href="#inicio"><input type="image" id="btn2" src="imagenes pokemon/home-2.png" width="100px" /></a>
+      </div>
+    </header>
+  </div>
+
+
+    <div class="row">
+      <div id="ocultar" class="col-12" style="display:block;">
         <h2>Bienvenido</h2>
-      </div>
-
-      <div id="pokedex" style="display:none;">
-       <a id="contenido" ></a>
-       
-       <div class="ordenar">
-         <label>Vista por orden:</label><br/>
-         <button  id="orderABC" >Alfabetico (A-Z)</button>
-         <button  id="orderNum" >Númerico</button>
-      </div>
-
-      <div id="content">
-
-      </div>
-      
-      
-      
-      </div>
     </div>
+  </div>
 
 
+    <div id="pokedex" style="display:none;">
+      <a id="contenido"></a>
 
-    <script src="./data/pokemon/pokemon.js"></script>
 
-    <script src="data.js"></script>
-    <script src="main.js"></script>
-  </body>
+      <div class="ordenar">
+        <label>Vista por orden:</label><br />
+        <button id="orderABC">Alfabetico (A-Z)</button>
+        <button id="orderNum">Númerico</button>
+      </div>
+
+      
+      <div id="content">
+        <!--aqui van los pokemon-->
+      </div>
+
+      <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>Modal Header</h2>
+        </div>
+        <div class="modal-body">
+          <!--<span class="close">&times;</span>-->
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero nesciunt delectus harum molestias
+            asperiores! Modi dolores ducimus quibusdam mollitia in placeat tempore facilis facere doloribus, tenetur
+            quisquam, iure unde sed!</p>
+        </div>
+      </div>
+    </div><!--fin del modal-->
+
+    </div><!--aqui cierra el div del pokedex-->
+  
+
+  
+
+  <script src="./data/pokemon/pokemon.js"></script>
+
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+
 </html>
