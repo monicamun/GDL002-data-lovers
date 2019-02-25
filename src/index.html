@@ -1,44 +1,46 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <meta charset="utf-8" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Data Lovers</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="grid.css" />
+  </head>
+  <body>
+    <div id="root" class="container">
+      <a id="inicio"></a>
 
-  <title>Data Lovers</title>
-  <link rel="stylesheet" href="style.css" />
+      <!-- Header -->
+      <header class="row">
+        <img class="col-3"src="imagenes pokemon/pokemon txt.png" alt="texto POKEMON" >
 
-</head>
-<body>
-  <div id="root" class="container">
-    <a id="inicio"></a>
+        <div class="col-3"></div>
+        <div class="col-3"></div>
 
-    
-    <header class="row">
-        <img class="col-3" src="imagenes pokemon/pokemon txt.png" alt="texto POKEMON">
+        <div class="col-3">
+          <a href="#contenido" ><input type="image"id="btn1"src="imagenes pokemon/Pokeball.png"width="100px"/></a>
+          
+          <a href="#inicio" ><input type="image"id="btn2"src="imagenes pokemon/home-2.png" width="100px" /></a>
+        </div>
+      </header>
+    </div>
 
-
-
-
-      <div class="col-3">
-        <a href="#contenido"><input type="image" id="btn1" src="imagenes pokemon/Pokeball.png" width="100px" /></a>
-
-        <a href="#inicio"><input type="image" id="btn2" src="imagenes pokemon/home-2.png" width="100px" /></a>
+    <!-- Pantalla bienvenida -->
+      <div class="row">
+        <div id="ocultar" class="col-12" style="display:block;">
+          <h2>Bienvenido</h2>
+        </div>
       </div>
     </header>
   </div>
 
-
-    <div class="row">
-      <div id="ocultar" class="col-12" style="display:block;">
-        <h2>Bienvenido</h2>
-    </div>
-  </div>
-
-
+      <!-- Div principal para pokedex -->
     <div id="pokedex" style="display:none;">
       <a id="contenido"></a>
 
-
+      <!-- Filtros y formas de ordenar -->
       <div class="ordenar">
         <label>Vista por orden:</label><br />
         <button id="orderABC">Alfabetico (A-Z)</button>

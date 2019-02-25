@@ -1,5 +1,5 @@
 let cardTemplate = `<div class="col-3">
-<div class="card">
+<div class="card " id="{pokemon.number}" >
 <img class="pkm-thmb" src="{pokemon.img}" alt="{pokemon.name}">
 <div class="name">
  <h3>{pokemon.name}</h3>
@@ -13,8 +13,8 @@ let cardTemplate = `<div class="col-3">
 </div>
 </div>`;
 
-
-
+let pokemonInfoTemplate = `
+`;
 
 document.getElementById("btn1").addEventListener("click", mostrar);
 document.getElementById("btn2").addEventListener("click", ocultar);
@@ -28,9 +28,9 @@ function displayPokemonCards(pokemonArray) {
   let htmlString = listHtml.join(" ");
   content.innerHTML = htmlString;
 
-
-
-  
+  Array.from( document.getElementsByClassName("card") ).forEach(element => {
+    element.addEventListener("click", () => console.log(element.id))
+  });
 }
 
 function fillCardTemplate(pokemon) {
@@ -39,7 +39,7 @@ function fillCardTemplate(pokemon) {
     .replace("{pokemon.name}", pokemon.name)
     .replace("{pokemon.name}", pokemon.name)
     .replace("{pokemon.number}", pokemon.num)
-
+    .replace("{pokemon.number}", pokemon.num)
     .replace("{pokemon.type}", pokemon.type);
 }
 
