@@ -1,5 +1,6 @@
-let cardTemplate = `<div class="card">
-<img src="{pokemon.img}" alt="{pokemon.name}">
+let cardTemplate = `<div class="col-3">
+<div class="card-2 " >
+<img class="pkm-thmb" src="{pokemon.img}" alt="{pokemon.name}">
 <div class="name">
  <h3>{pokemon.name}</h3>
 </div>
@@ -8,6 +9,7 @@ let cardTemplate = `<div class="card">
 </div>
 <div class="type">
 <h3>{pokemon.type}</h3>
+</div>
 </div>
 </div>`;
 
