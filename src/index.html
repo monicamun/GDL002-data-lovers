@@ -8,60 +8,60 @@
     <link rel="stylesheet" href="grid.css" />
   </head>
   <body>
-    <div id="root">
-      <div class="container">
-        <div class="row">
-          <a id="inicio"></a>
+    <div id="root" class="container">
+      <a id="inicio"></a>
 
-          <header>
-            <img
-              class="col-3"
-              src="imagenes pokemon/pokemon txt.png"
-              alt="texto POKEMON"
-            />
+      <!-- Header -->
+      <header class="row">
+        <img
+          class="col-3"
+          src="imagenes pokemon/pokemon txt.png"
+          alt="texto POKEMON"
+        />
 
-            <div class="col-3"></div>
-            <div class="col-3"></div>
+        <div class="col-3"></div>
+        <div class="col-3"></div>
 
-            <div class="col-3">
-              <a href="#contenido"
-                ><input
-                  type="image"
-                  id="btn1"
-                  src="imagenes pokemon/Pokeball.png"
-                  width="100px"
-              /></a>
+        <div class="col-3">
+          <a href="#contenido"
+            ><input
+              type="image"
+              id="btn1"
+              src="imagenes pokemon/Pokeball.png"
+              width="100px"
+          /></a>
 
-              <a href="#inicio"
-                ><input
-                  type="image"
-                  id="btn2"
-                  src="imagenes pokemon/home-2.png"
-                  width="100px"
-              /></a>
+          <a href="#inicio"
+            ><input
+              type="image"
+              id="btn2"
+              src="imagenes pokemon/home-2.png"
+              width="100px"
+          /></a>
+        </div>
+      </header>
+    </div>
+
+    <!-- Pantalla bienvenida -->
+      <div class="row">
+          <div id="ocultar" class="col-12" style="display:block;">
+              <h2>Bienvenido</h2>
             </div>
-          </header>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row"></div>
       </div>
 
-      <div id="ocultar" style="display:block;">
-        <h2>Bienvenido</h2>
+      <!-- Div principal para pokedex -->
+    <div id="pokedex" style="display:none;">
+      <a id="contenido"></a>
+
+      <!-- Filtros y formas de ordenar -->
+      <div class="ordenar">
+        <label>Vista por orden:</label><br />
+        <button id="orderABC">Alfabetico (A-Z)</button>
+        <button id="orderNum">Númerico</button>
       </div>
 
-      <div id="pokedex" style="display:none;">
-        <a id="contenido"></a>
-
-        <div class="ordenar">
-          <label>Vista por orden:</label><br />
-          <button id="orderABC">Alfabetico (A-Z)</button>
-          <button id="orderNum">Númerico</button>
-        </div>
-
-        <div id="content" class="row"></div>
-      </div>
+      <!-- Lista de pokemon dinamica -->
+      <div id="content" class="row"></div>
     </div>
 
     <script src="./data/pokemon/pokemon.js"></script>
