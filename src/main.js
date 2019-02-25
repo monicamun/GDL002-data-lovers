@@ -1,5 +1,6 @@
-let cardTemplate = `<div class="card">
-<img src="{pokemon.img}" alt="{pokemon.name}">
+let cardTemplate = `<div class="col-3">
+<div class="card " id="{pokemon.number}" >
+<img class="pkm-thmb" src="{pokemon.img}" alt="{pokemon.name}">
 <div class="name">
  <h3>{pokemon.name}</h3>
 </div>
@@ -9,7 +10,16 @@ let cardTemplate = `<div class="card">
 <div class="type">
 <h3>{pokemon.type}</h3>
 </div>
+</div>
 </div>`;
+
+let pokemonInfoTemplate = `
+`;
+
+document.getElementById("btn1").addEventListener("click", mostrar);
+document.getElementById("btn2").addEventListener("click", ocultar);
+document.getElementById("orderABC").addEventListener("click", alphabeticalOrder);
+document.getElementById("orderNum").addEventListener("click",numericalOrder );
 
 let content = document.getElementById("content");
 
@@ -17,6 +27,10 @@ function displayPokemonCards(pokemonArray) {
   let listHtml = pokemonArray.map(pokemon => fillCardTemplate(pokemon));
   let htmlString = listHtml.join(" ");
   content.innerHTML = htmlString;
+
+  Array.from( document.getElementsByClassName("card") ).forEach(element => {
+    element.addEventListener("click", () => console.log(element.id))
+  });
 }
 
 function fillCardTemplate(pokemon) {
@@ -24,6 +38,7 @@ function fillCardTemplate(pokemon) {
     .replace("{pokemon.img}", pokemon.img)
     .replace("{pokemon.name}", pokemon.name)
     .replace("{pokemon.name}", pokemon.name)
+    .replace("{pokemon.number}", pokemon.num)
     .replace("{pokemon.number}", pokemon.num)
     .replace("{pokemon.type}", pokemon.type);
 }
@@ -55,13 +70,6 @@ function numericalOrder() {
   });
   displayPokemonCards(numPokemon); 
 }
-
-
-
-document.getElementById("btn1").addEventListener("click", mostrar);
-document.getElementById("btn2").addEventListener("click", ocultar);
-document.getElementById("orderABC").addEventListener("click", alphabeticalOrder);
-document.getElementById("orderNum").addEventListener("click",numericalOrder );
 
 function mostrar() {
   document.getElementById("pokedex").style.display = "block";

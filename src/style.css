@@ -3,38 +3,37 @@ html{
     background-image: url("imagenes pokemon/pokemon collage.jpg");
 }
 
+body {
+    padding: 10px 5px;
+}
+
 .card:hover{
 background:#D3D3D3; 
 }
 
 #content {
     background: rgb(240, 248, 255,0.5);
-    height: 1600vmax;
+    /* height: 1600vmax; */
     text-align: center;
     margin: auto 5%;
     border-radius: 25px;
     padding: 30px 40px 30px 40px;
 }
 
-.card {
-    float: left;
-    margin: 20px;
-    background:rgb(255, 255, 255);
-    opacity: 100%;
-    padding: 10px 40px;
-    border-radius: 15px;
-}
 header {
     background: rgb(35, 20, 20,0.5);
     margin: auto;
     border-radius: 15px;
     padding: 10px; 
+    overflow: auto;
 }
+
 header img {
-float:right;
-height:110px;
-width: 600px;
+/* float:right; */
+/* width: 263px; */
+/* max-width: 300px; */
 }
+
 div.ordenar {
     text-align: center;
     background:rgb(255,255,255,0.5);
@@ -42,9 +41,21 @@ div.ordenar {
     padding:13px;
     font-size: 20px;
     font-family:cursive;
+    font-weight: bolder;
     margin: auto 5%;
     margin-top: 5%;
     border: 2px solid black;
     }
+    
+.card{
+    background:rgb(255, 255, 255);
+    opacity: 100%;
+    padding: 10px 40px;
+    border-radius: 15px;
+    max-height: 200px;
+}
 
+.pkm-thmb {
+    height: 50%;
+}
 
