@@ -16,5 +16,8 @@ window.dataLovers = {
   },
   getPokemonByTypeFilter: type => {
     return pokemonDb.array.filter(p => p.type.indexOf(type) > -1);
+  },
+  getPokemonByWeaknessesFilter: weaknesses => {
+    return pokemonDb.array.filter(p => p.weaknesses.indexOf(weaknesses) > -1);
   }
 };
