@@ -61,7 +61,7 @@ let cardTemplate = `<div class="col-3">
 </div>
 </div>`;
 
-let pokemonInfoTemplate = `<div class="col-12">
+let pokemonInfoTemplate = `<div>
 <div class="card " id="{pokemon.number}" >
 <img class="pkm-thmb" src="{pokemon.img}" alt="{pokemon.name}">
 <div class="name">
@@ -72,6 +72,15 @@ let pokemonInfoTemplate = `<div class="col-12">
 </div>
 <div class="type">
 <h3>{pokemon.type}</h3>
+</div>
+<div class="weaknesses">
+<h3>{pokemon.debilidad}</h3>
+</div>
+<div class="next_evolution">
+<h3>{pokemon.next_evolution.name}</h3>
+<h3>{pokemon.next_evolution.num}</h3>
+<img class="photoEvol" src="{pokemon.img}" alt="{pokemon.name}">
+
 </div>
 </div>
 </div>`;
@@ -122,7 +131,7 @@ function displayPokemonCards(pokemonArray) {
       modal.style.display = "block";
       let selectedPokemon = dataLovers.getPokemonByNum(element.id)
       modalBody.innerHTML = pokemonInfoTemplate.replace(
-        "{pokemon.img}",selectedPokemon.img)
+        "{pokemon.img}",selectedPokemon.img).replace("{pokemon.name}", selectedPokemon.name).replace("{pokemon.name}","Nombre: " + selectedPokemon.name).replace("{pokemon.number}", selectedPokemon.num).replace("{pokemon.number}", "Número: " + selectedPokemon.num).replace("{pokemon.type}", "Es un pokemón de tipo: " + selectedPokemon.type).replace("{pokemon.debilidad}", "Su debilidad son los poquemon de tipo: " + selectedPokemon.weaknesses).replace("{pokemon.next_evolution.name}", selectedPokemon.next_evolution.map(nextEvo => nextEvo.name).join(',')).replace("{pokemon.next_evolution.num}", selectedPokemon.next_evolution.map(nextEvoNum => nextEvoNum.num).join(',')).replace("{pokemon.img}", selectedPokemon.next_evolution.img);
     });
 
      //let selectedPokemon = dataLovers.getAllPokemon()
