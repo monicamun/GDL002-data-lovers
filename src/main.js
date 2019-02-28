@@ -126,10 +126,7 @@ function displayPokemonCards(pokemonArray) {
     element.addEventListener("click", () => {
       modal.style.display = "block";
       let selectedPokemon = dataLovers.getPokemonByNum(element.id)
-      modalBody.innerHTML = pokemonInfoTemplate.replace(
-        "{pokemon.img}",
-        selectedPokemon.img
-      );
+      modalBody.innerHTML = pokemonInfoTemplate.replace( "{pokemon.img}",selectedPokemon.img );
     });
 
      //let selectedPokemon = dataLovers.getAllPokemon()
