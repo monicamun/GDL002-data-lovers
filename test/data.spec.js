@@ -24,4 +24,6 @@ describe('getAllPokemon', () => {
     it('returns 151 elements', () => {
       expect(dataLovers.getAllPokemon().length).toBe(151);
     });
+
+
   });
