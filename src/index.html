@@ -1,18 +1,119 @@
 <!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="grid.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <!-- <script src="./data/injuries/injuries.js"></script> -->
-    <!-- <script src="./data/pokemon/pokemon.js"></script> -->
-    <!-- <script src="./data/steam/steam.js"></script> -->
-    <!-- <script src="./data/worldbank/worldbank.js"></script> -->
-    <!-- <script src="./data/lol/lol.js"></script> -->
-    <script src="data.js"></script>
-    <script src="main.js"></script>
-  </body>
+    <div id="root" class="container">
+      <a id="inicio"></a>
+
+      <!-- Header -->
+      <header class="row"><img  class="col-3" src="imagenes pokemon/pokemon txt.png" 
+        alt="texto POKEMON"/>
+
+        <div class="col-3"></div>
+        <div class="col-3"></div>
+
+        <div class="col-3">
+          <a href="#contenido" ><input type="image"id="btn1" src="imagenes pokemon/Pokeball.png"  width="100px"/></a>
+
+          <a href="#inicio" ><input  type="image"  id="btn2"  src="imagenes pokemon/home-2.png" width="100px" /></a>
+        </div>
+      </header>
+    </div>
+
+    <!-- Pantalla bienvenida -->
+    <div class="row">
+      <div id="ocultar" class="col-12" style="display:block;">
+        <h2>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ea
+          accusamus veritatis saepe nam perspiciatis iure dolore provident
+          libero commodi animi est harum, fugit maiores quasi eos possimus
+          architecto molestiae.
+        </h2>
+        <form name="f1">
+          <div class="col-3"></div>
+          <!-- <input type="button" value="&lt;&lt;" onclick="go()"> -->
+          <div class="conten-banner">
+            <img name="banner" class="col-6" alt="" />
+            <p class="text-banner">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum,
+              iste.
+            </p>
+          </div>
+          <!-- <input type="button" value="&gt;&gt;" onclick="back()"> -->
+          <div class="col-3"></div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Div principal para pokedex -->
+    <div id="pokedex" style="display:none;">
+      <a id="contenido"></a>
+
+      <!-- Filtros y formas de ordenar -->
+      <div class="ordenar">
+        <label>Vista por orden:</label><br />
+        <button id="orderABC">Alfabetico (A-Z)</button>
+        <button id="orderNum">Númerico</button>
+        <select id="select-type">
+          <option selected="true" disabled="disabled"
+            >Seleccion por tipo</option
+          >
+        </select>
+
+        <select id="select-weaknesses">
+          <option selected="true" disabled="disabled"
+            >Seleccion por debilidad</option
+          >
+        </select>
+      </div>
+
+
+      <div class="row">
+      <div class="col-1"></div>
+      <h3 id="averages" class="col-10">
+
+      </h3>
+      <div class="col-1"></div>
+      </div>
+
+      <div id="content" class="row">
+        <!-- Lista de pokemon dinamica -->
+
+      </div>
+
+      <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>Modal Header</h2>
+        </div>
+        <div id="info-modal-body" class="modal-body">
+          <!--<span class="close">&times;</span>-->
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero nesciunt delectus harum molestias
+            asperiores! Modi dolores ducimus quibusdam mollitia in placeat tempore facilis facere doloribus, tenetur
+            quisquam, iure unde sed!</p>
+        </div>
+      </div>
+    </div><!--fin del modal-->
+
+    </div><!--aqui cierra el div del pokedex-->
+  
+
+  
+
+  <script src="./data/pokemon/pokemon.js"></script>
+
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+
 </html>
