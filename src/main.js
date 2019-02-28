@@ -90,14 +90,8 @@ let pokemonInfoTemplate = `<div>
 document.getElementById("btn1").addEventListener("click", mostrar);
 document.getElementById("btn2").addEventListener("click", ocultar);
 // botones para ordenar
-<<<<<<< HEAD
-document
-  .getElementById("orderABC").addEventListener("click", alphabeticalOrder);
-document.getElementById("orderNum").addEventListener("click", numericalOrder);
-=======
 document.getElementById("orderABC").addEventListener("click", alphabeticalOrder);
 document.getElementById("orderNum").addEventListener("click",numericalOrder);
->>>>>>> 70b65a0ca54c82065732017194f91030571e2de9
 // seleccionar tipo
 document.getElementById("select-type").addEventListener("change", event => {
   resetSelect("select-weaknesses");
@@ -117,11 +111,7 @@ document.getElementById("select-weaknesses").addEventListener("change", event =>
 
 // eventos para modal
 document.getElementsByClassName("close")[0].addEventListener("click", function() {
-<<<<<<< HEAD
   modal.style.display = "none";
-=======
-    modal.style.display = "none";
->>>>>>> 70b65a0ca54c82065732017194f91030571e2de9
   });
 window.addEventListener("click", function(event) {
   if (event.target == modal) {
@@ -140,12 +130,8 @@ function displayPokemonCards(pokemonArray) {
     element.addEventListener("click", () => {
       modal.style.display = "block";
       let selectedPokemon = dataLovers.getPokemonByNum(element.id)
-<<<<<<< HEAD
-      modalBody.innerHTML = pokemonInfoTemplate.replace( "{pokemon.img}",selectedPokemon.img );
-=======
       modalBody.innerHTML = pokemonInfoTemplate.replace(
         "{pokemon.img}",selectedPokemon.img).replace("{pokemon.name}", selectedPokemon.name).replace("{pokemon.name}","Nombre: " + selectedPokemon.name).replace("{pokemon.number}", selectedPokemon.num).replace("{pokemon.number}", "Número: " + selectedPokemon.num).replace("{pokemon.type}", "Es un pokemón de tipo: " + selectedPokemon.type).replace("{pokemon.debilidad}", "Su debilidad son los poquemon de tipo: " + selectedPokemon.weaknesses).replace("{pokemon.next_evolution.name}", selectedPokemon.next_evolution.map(nextEvo => nextEvo.name).join(',')).replace("{pokemon.next_evolution.num}", selectedPokemon.next_evolution.map(nextEvoNum => nextEvoNum.num).join(',')).replace("{pokemon.img}", selectedPokemon.next_evolution.img);
->>>>>>> 70b65a0ca54c82065732017194f91030571e2de9
     });
 
      //let selectedPokemon = dataLovers.getAllPokemon()
@@ -209,12 +195,8 @@ function ocultar() {
   startSliderInterval();
   document.getElementById("pokedex").style.display = "none";
   document.getElementById("ocultar").style.display = "block";
-<<<<<<< HEAD
-  
-=======
   document.getElementById("averages").style.display = "none";
   resetSelect()
->>>>>>> 70b65a0ca54c82065732017194f91030571e2de9
 }
 
 // cambia la imagen del banner a la siguiente en el array
