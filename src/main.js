@@ -1,14 +1,50 @@
 // declaracion de variables
 // variable para guardar el id del sliderInterval y poder detenerlo despues
 let sliderInterval;
-// tipos de pokemon
-let typeArray = ["Grass","Poison","Fire","Flying","Water","Bug","Normal","Electric","Ground","Fighting","Psychic","Rock","Ice","Ghost","Dragon"]
+// elemento del modal para informacion del pokemon
+let modal = document.getElementById("info-modal");
 // elemento que se usa para mostrar la lista de pokemones
 let content = document.getElementById("content");
 // indice de la imagen del banner
 let imageIndex = 0;
+// tipos de pokemon
+let typeArray = [
+  "Grass",
+  "Poison",
+  "Fire",
+  "Flying",
+  "Water",
+  "Bug",
+  "Normal",
+  "Electric",
+  "Ground",
+  "Fighting",
+  "Psychic",
+  "Rock",
+  "Ice",
+  "Ghost",
+  "Dragon"
+];
 //debilidades de pokemon
-let weaknessesArray = ["Fire", "Ice", "Flying", "Psychic", "Water", "Ground", "Rock", "Electric", "Grass", "Fighting", "Poison", "Bug", "Fairy", "Ghost", "Dark", "Steel", "Dragon"]
+let weaknessesArray = [
+  "Fire",
+  "Ice",
+  "Flying",
+  "Psychic",
+  "Water",
+  "Ground",
+  "Rock",
+  "Electric",
+  "Grass",
+  "Fighting",
+  "Poison",
+  "Bug",
+  "Fairy",
+  "Ghost",
+  "Dark",
+  "Steel",
+  "Dragon"
+];
 // template para las tarjetas de la lista del pokemon
 let cardTemplate = `<div class="col-3">
 <div class="card " id="{pokemon.number}" >
@@ -42,17 +78,37 @@ let pokemonInfoTemplate = `<div class="col-12">
 `;
 
 // asignacion de event listeners
+// botones para ocultar y mostrar pokedex
 document.getElementById("btn1").addEventListener("click", mostrar);
 document.getElementById("btn2").addEventListener("click", ocultar);
-document.getElementById("orderABC").addEventListener("click", alphabeticalOrder);
+// botones para ordenar
+document
+  .getElementById("orderABC")
+  .addEventListener("click", alphabeticalOrder);
 document.getElementById("orderNum").addEventListener("click", numericalOrder);
-document.getElementById("select-type").addEventListener("change", (event) => {
-  resetSelect('select-weaknesses');
+// seleccionar tipo y debilidad
+document.getElementById("select-type").addEventListener("change", event => {
+  resetSelect("select-weaknesses");
   displayPokemonCards(dataLovers.getPokemonByTypeFilter(event.target.value));
 });
-document.getElementById("select-weaknesses").addEventListener("change", (event) => {
-  resetSelect('select-type');
-  displayPokemonCards(dataLovers.getPokemonByWeaknessesFilter(event.target.value));
+document
+  .getElementById("select-weaknesses")
+  .addEventListener("change", event => {
+    resetSelect("select-type");
+    displayPokemonCards(
+      dataLovers.getPokemonByWeaknessesFilter(event.target.value)
+    );
+  });
+// eventos para modal
+document
+  .getElementsByClassName("close")[0]
+  .addEventListener("click", function() {
+    modal.style.display = "none";
+  });
+window.addEventListener("click", function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 });
 
 // funciones
@@ -60,44 +116,24 @@ function displayPokemonCards(pokemonArray) {
   let listHtml = pokemonArray.map(pokemon => fillCardTemplate(pokemon));
   let htmlString = listHtml.join(" ");
   content.innerHTML = htmlString;
+  let modalBody = document.getElementById("modal-body");
 
   Array.from(document.getElementsByClassName("card")).forEach(element => {
-    let modal = document.getElementById('myModal');
-    let span = document.getElementsByClassName("close")[0];
-    //let prueba = document.getElementById('modal-body');
-
-    // element.addEventListener("click", () => {
-        // let modal = document.getElementById('myModal');
-        // let span = document.getElementsByClassName("close")[0];
-
-        element.addEventListener('click', () => {
-            modal.style.display = "block";
-            let prueba = document.getElementById('modal-body');
-            prueba.innerHTML = pokemonInfoTemplate.replace(
-              "{pokemon.img}",
-              element.img)
-        });
-        span.addEventListener("click", function() {
-            modal.style.display = "none";
-        });
-        window.addEventListener("click", function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-
-            
-        });
-
-    // });
-
-    
-      // let selectedPokemon = dataLovers.getPokemonByNum(element.id);
-      // content.innerHTML = pokemonInfoTemplate.replace(
-      //   "{pokemon.img}",
-      //   selectedPokemon.img)
+    element.addEventListener("click", () => {
+      modal.style.display = "block";
+      let selectedPokemon = dataLovers.getAllPokemon()
+      modalBody.innerHTML = pokemonInfoTemplate.replace(
+        "{pokemon.img}",
+        selectedPokemon.img
+      );
     });
-  };
 
+     //let selectedPokemon = dataLovers.getAllPokemon()
+    // content.innerHTML = pokemonInfoTemplate.replace(
+    //   "{pokemon.img}",
+    //   selectedPokemon.img)
+  });
+}
 
 function fillCardTemplate(pokemon) {
   return cardTemplate
@@ -110,7 +146,7 @@ function fillCardTemplate(pokemon) {
 }
 
 function alphabeticalOrder() {
-  resetBothSelects()
+  resetBothSelects();
   let sortedPokemon = dataLovers.getAllPokemon().sort(function(prev, next) {
     if (prev.name > next.name) {
       return 1;
@@ -125,7 +161,7 @@ function alphabeticalOrder() {
 }
 
 function numericalOrder() {
-  resetBothSelects()
+  resetBothSelects();
   let numPokemon = dataLovers.getAllPokemon().sort(function(prev, next) {
     if (prev.num > next.num) {
       return 1;
@@ -146,7 +182,7 @@ function mostrar() {
 }
 // oculta pokedex, muestra principal
 function ocultar() {
-  startSliderInterval()
+  startSliderInterval();
   document.getElementById("pokedex").style.display = "none";
   document.getElementById("ocultar").style.display = "block";
 }
@@ -171,34 +207,30 @@ function banner() {
 // se usa para comenzar el intervalo para cambiar el banner del slider
 function startSliderInterval() {
   // espera 5 segundos
-  sliderInterval = setInterval(banner, 5000)
+  sliderInterval = setInterval(banner, 5000);
 }
 
-
 // llena el select con el id 'selectId' con las opciones de 'optionArray'
-function fillSelect(selectId,optionsArray) {
+function fillSelect(selectId, optionsArray) {
   let selectElement = document.getElementById(selectId);
-   
-  optionsArray.forEach(option => {
-      let optionElement = document.createElement("option");
-      optionElement.text = option;
-      selectElement.add(optionElement);
-  });
-};
 
-function resetSelect(selectId){
-  document.getElementById(selectId).selectedIndex = 0
+  optionsArray.forEach(option => {
+    let optionElement = document.createElement("option");
+    optionElement.text = option;
+    selectElement.add(optionElement);
+  });
+}
+
+function resetSelect(selectId) {
+  document.getElementById(selectId).selectedIndex = 0;
 }
 
 function resetBothSelects() {
-  resetSelect('select-type');
-  resetSelect('select-weaknesses');
+  resetSelect("select-type");
+  resetSelect("select-weaknesses");
 }
 
-function averageByW(params) {
-  
-}
-
+function averageByWeaknesses(params) {}
 
 //
 // Ejecucion al iniciar la pagina.
@@ -207,11 +239,10 @@ function averageByW(params) {
 // llenar con lista default de pokemon
 displayPokemonCards(dataLovers.getAllPokemon());
 // llenar el select con los tipos de pokemon
-fillSelect("select-type",typeArray);
+fillSelect("select-type", typeArray);
 //llenar el select con los tipos de debilidad de pokemon
-fillSelect("select-weaknesses",typeArray);
+fillSelect("select-weaknesses", typeArray);
 // empieza el intervalo al cargar el js
 startSliderInterval();
 // carga el primer banner sin esperar los 5 segundos
 banner();
-
