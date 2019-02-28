@@ -86,19 +86,23 @@ document
   .getElementById("orderABC")
   .addEventListener("click", alphabeticalOrder);
 document.getElementById("orderNum").addEventListener("click", numericalOrder);
-// seleccionar tipo y debilidad
+// seleccionar tipo
 document.getElementById("select-type").addEventListener("change", event => {
   resetSelect("select-weaknesses");
   displayPokemonCards(dataLovers.getPokemonByTypeFilter(event.target.value));
+let averagesShow = document.getElementById("averages");
+averagesShow.innerHTML ="El porcentaje del tipo de tipo seleccionado es:"+ averages(dataLovers.getPokemonByTypeFilter(event.target.value))+"%";
+
 });
-document
-  .getElementById("select-weaknesses")
-  .addEventListener("change", event => {
+// seleccionar debilidades
+document.getElementById("select-weaknesses").addEventListener("change", event => {
     resetSelect("select-type");
-    displayPokemonCards(
-      dataLovers.getPokemonByWeaknessesFilter(event.target.value)
-    );
+     displayPokemonCards( dataLovers.getPokemonByWeaknessesFilter(event.target.value));
+     let averagesShow = document.getElementById("averages");
+    averagesShow.innerHTML ="El porcentaje de el tipo de debilidad seleccionado es " +   averages(dataLovers.getPokemonByWeaknessesFilter(event.target.value))+"%";
   });
+
+
 // eventos para modal
 document
   .getElementsByClassName("close")[0]
@@ -230,7 +234,11 @@ function resetBothSelects() {
   resetSelect("select-weaknesses");
 }
 
-function averageByWeaknesses(params) {}
+function averages(array) {
+
+return ( 100 * array.length)/151
+
+}
 
 //
 // Ejecucion al iniciar la pagina.
