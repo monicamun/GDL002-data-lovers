@@ -116,12 +116,12 @@ function displayPokemonCards(pokemonArray) {
   let listHtml = pokemonArray.map(pokemon => fillCardTemplate(pokemon));
   let htmlString = listHtml.join(" ");
   content.innerHTML = htmlString;
-  let modalBody = document.getElementById("modal-body");
+  let modalBody = document.getElementById("info-modal-body");
 
   Array.from(document.getElementsByClassName("card")).forEach(element => {
     element.addEventListener("click", () => {
       modal.style.display = "block";
-      let selectedPokemon = dataLovers.getAllPokemon()
+      let selectedPokemon = dataLovers.getPokemonByNum(element.id)
       modalBody.innerHTML = pokemonInfoTemplate.replace(
         "{pokemon.img}",
         selectedPokemon.img
