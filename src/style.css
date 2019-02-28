@@ -15,7 +15,7 @@ background:#D3D3D3;
     background: rgb(240, 248, 255,0.5);
     /*height: 1100em;*/
     text-align: center;
-    margin: auto 5%;
+    margin: auto 5% 5%;
     border-radius: 25px;
     padding: 30px 40px 30px 40px;
 }
@@ -132,19 +132,77 @@ h2{
   padding: 30px 40px 30px 40px;
 }
 
-div #ocultar h2 {
+div #ocultar h1 {
+  text-align: center;
+  padding: 5px;
+  margin: 5px;
+  color:rgba(8, 211, 247, 0.815);
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+  font-family:cursive, sans-serif;
+  font-size: 70px;
+}
+
+div #ocultar p {
+  text-align: justify;
   color:rgb(0, 0, 0);
   font-family:cursive, sans-serif;
+  font-size: 20px;
 }
-.conten-banner {
+
+.infoBanner {
+  display: inline-block;
   text-align: center;
 }
 
+.infoBanner h2 {
+  color:rgb(56, 247, 8);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  text-align: center;
+  margin: 3% auto;
+  font-family: cursive, sans-serif;
+  font-size: 50px;
+}
+
 p.text-banner {
-  display: inline-block;
   margin: 3% auto;
   font-family: cursive, sans-serif;
   font-size: 18px;
+}
+
+.to-top{
+	color:black;
+	padding-top:1.8em;
+	display:inline-block;/* or block */
+  position:relative;
+  top:50%;
+  left: 60%;
+	border-color:rgb(22, 3, 3);
+	text-decoration:none;
+	transition:all .3s ease-out;
+}
+.to-top:before{
+	content:'▲';
+	font-size:.9em;
+	position:absolute;
+	top:0;
+	left:50%;
+	margin-left:-.7em;
+	border:solid .13em white;
+	border-radius:10em;
+	width:1.4em;
+	height:1.4em;
+	line-height:1.3em;
+	border-color:inherit;
+	transition:transform .5s ease-in;
+}
+.to-top:hover{
+	color:rgb(250, 74, 103);
+	border-color:rgb(206, 21, 52);
+}
+.to-top:hover:before{
+	transform: rotate(360deg);
 }
 
 
