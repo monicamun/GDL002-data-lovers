@@ -86,19 +86,23 @@ document
   .getElementById("orderABC")
   .addEventListener("click", alphabeticalOrder);
 document.getElementById("orderNum").addEventListener("click", numericalOrder);
-// seleccionar tipo y debilidad
+// seleccionar tipo
 document.getElementById("select-type").addEventListener("change", event => {
   resetSelect("select-weaknesses");
   displayPokemonCards(dataLovers.getPokemonByTypeFilter(event.target.value));
+let averagesShow = document.getElementById("averages");
+averagesShow.innerHTML ="El porcentaje del tipo seleccionado es:" + averages(dataLovers.getPokemonByTypeFilter(event.target.value)).toFixed(2)+"%";
+
 });
-document
-  .getElementById("select-weaknesses")
-  .addEventListener("change", event => {
+// seleccionar debilidades
+document.getElementById("select-weaknesses").addEventListener("change", event => {
     resetSelect("select-type");
-    displayPokemonCards(
-      dataLovers.getPokemonByWeaknessesFilter(event.target.value)
-    );
+     displayPokemonCards( dataLovers.getPokemonByWeaknessesFilter(event.target.value));
+     let averagesShow = document.getElementById("averages");
+    averagesShow.innerHTML ="El porcentaje de el tipo de debilidad seleccionado es "  +   averages(dataLovers.getPokemonByWeaknessesFilter(event.target.value)).toFixed(2)+"%";
   });
+
+
 // eventos para modal
 document
   .getElementsByClassName("close")[0]
@@ -116,12 +120,12 @@ function displayPokemonCards(pokemonArray) {
   let listHtml = pokemonArray.map(pokemon => fillCardTemplate(pokemon));
   let htmlString = listHtml.join(" ");
   content.innerHTML = htmlString;
-  let modalBody = document.getElementById("modal-body");
+  let modalBody = document.getElementById("info-modal-body");
 
   Array.from(document.getElementsByClassName("card")).forEach(element => {
     element.addEventListener("click", () => {
       modal.style.display = "block";
-      let selectedPokemon = dataLovers.getAllPokemon()
+      let selectedPokemon = dataLovers.getPokemonByNum(element.id)
       modalBody.innerHTML = pokemonInfoTemplate.replace(
         "{pokemon.img}",
         selectedPokemon.img
@@ -162,6 +166,7 @@ function alphabeticalOrder() {
 
 function numericalOrder() {
   resetBothSelects();
+  
   let numPokemon = dataLovers.getAllPokemon().sort(function(prev, next) {
     if (prev.num > next.num) {
       return 1;
@@ -185,6 +190,7 @@ function ocultar() {
   startSliderInterval();
   document.getElementById("pokedex").style.display = "none";
   document.getElementById("ocultar").style.display = "block";
+  resetSelect()
 }
 
 // cambia la imagen del banner a la siguiente en el array
@@ -228,9 +234,14 @@ function resetSelect(selectId) {
 function resetBothSelects() {
   resetSelect("select-type");
   resetSelect("select-weaknesses");
+  
 }
 
-function averageByWeaknesses(params) {}
+function averages(array) {
+
+return ( 100 * array.length)/151
+
+}
 
 //
 // Ejecucion al iniciar la pagina.

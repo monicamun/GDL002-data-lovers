@@ -1,10 +1,9 @@
 html{
-
-    background-image: url("imagenes pokemon/pokemon collage.jpg");
+    background-image: url("imagenes pokemon/pokemon collage.jpg") ; 
 }
 
 body {
-    padding: 10px 5px;
+  padding: 10px 5px;
 }
 
 .card:hover{
@@ -13,34 +12,34 @@ background:#D3D3D3;
 
 #content {
     background: rgb(240, 248, 255,0.5);
-    /* height: 1600vmax; */
+    /*height: 1100em;*/
     text-align: center;
-    margin: auto 5%;
+    margin: auto 5% 5%;
     border-radius: 25px;
     padding: 30px 40px 30px 40px;
 }
 
 header {
-    background: rgb(35, 20, 20,0.5);
-    margin: auto;
-    border-radius: 15px;
-    padding: 10px; 
-    overflow: auto;
+  background: rgb(35, 20, 20,0.5);
+  margin: auto;
+  border-radius: 15px;
+  padding: 10px; 
+
 }
 
-header img {
-/* float:right; */
-/* width: 263px; */
-/* max-width: 300px; */
-}
+/*header img {
+  float:right;
+  height:110px;
+  width: 600px;
+  }*/
 
-div.ordenar {
+  div.ordenar {
     text-align: center;
     background:rgb(255,255,255,0.5);
     border-radius: 15px;
     padding:13px;
     font-size: 20px;
-    font-family:cursive;
+    font-family:cursive, sans-serif;
     font-weight: bolder;
     margin: auto 5%;
     margin-top: 5%;
@@ -56,7 +55,22 @@ div.ordenar {
 }
 
 .pkm-thmb {
-    height: 50%;
+  height: 50%;
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    /* z-index: 1;  Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgb(0, 0, 0, 0.5); /* Black w/ opacity */
 }
 h2{
     color: rgb(255, 255, 255);
@@ -106,6 +120,94 @@ h2{
   color: red;
   text-decoration: none;
   cursor: pointer;
+}
+
+
+#averages {
+    background:rgb(255,255,255,0.7);
+    border-radius: 15px;
+}
+    
+#ocultar {
+  background: rgb(240, 248, 255,0.8);
+  max-width: 90%;
+  text-align: justify;
+  margin: 5% 5%;
+  border-radius: 25px;
+  padding: 30px 40px 30px 40px;
+}
+
+div #ocultar h1 {
+  text-align: center;
+  padding: 5px;
+  margin: 5px;
+  color:rgba(8, 211, 247, 0.815);
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+  font-family:cursive, sans-serif;
+  font-size: 70px;
+}
+
+div #ocultar p {
+  text-align: justify;
+  color:rgb(0, 0, 0);
+  font-family:cursive, sans-serif;
+  font-size: 20px;
+}
+
+.infoBanner {
+  display: inline-block;
+  text-align: center;
+}
+
+.infoBanner h2 {
+  color:rgb(56, 247, 8);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  text-align: center;
+  margin: 3% auto;
+  font-family: cursive, sans-serif;
+  font-size: 50px;
+}
+
+p.text-banner {
+  margin: 3% auto;
+  font-family: cursive, sans-serif;
+  font-size: 18px;
+}
+
+.to-top{
+	color:black;
+	padding-top:1.8em;
+	display:inline-block;/* or block */
+  position:relative;
+  top:50%;
+  left: 60%;
+	border-color:rgb(22, 3, 3);
+	text-decoration:none;
+	transition:all .3s ease-out;
+}
+.to-top:before{
+	content:'▲';
+	font-size:.9em;
+	position:absolute;
+	top:0;
+	left:50%;
+	margin-left:-.7em;
+	border:solid .13em white;
+	border-radius:10em;
+	width:1.4em;
+	height:1.4em;
+	line-height:1.3em;
+	border-color:inherit;
+	transition:transform .5s ease-in;
+}
+.to-top:hover{
+	color:rgb(250, 74, 103);
+	border-color:rgb(206, 21, 52);
+}
+.to-top:hover:before{
+	transform: rotate(360deg);
 }
 
 
