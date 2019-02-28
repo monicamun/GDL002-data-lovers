@@ -83,8 +83,7 @@ document.getElementById("btn1").addEventListener("click", mostrar);
 document.getElementById("btn2").addEventListener("click", ocultar);
 // botones para ordenar
 document
-  .getElementById("orderABC")
-  .addEventListener("click", alphabeticalOrder);
+  .getElementById("orderABC").addEventListener("click", alphabeticalOrder);
 document.getElementById("orderNum").addEventListener("click", numericalOrder);
 // seleccionar tipo
 document.getElementById("select-type").addEventListener("change", event => {
@@ -104,10 +103,8 @@ document.getElementById("select-weaknesses").addEventListener("change", event =>
 
 
 // eventos para modal
-document
-  .getElementsByClassName("close")[0]
-  .addEventListener("click", function() {
-    modal.style.display = "none";
+document.getElementsByClassName("close")[0].addEventListener("click", function() {
+  modal.style.display = "none";
   });
 window.addEventListener("click", function(event) {
   if (event.target == modal) {
@@ -187,7 +184,7 @@ function ocultar() {
   startSliderInterval();
   document.getElementById("pokedex").style.display = "none";
   document.getElementById("ocultar").style.display = "block";
-  resetSelect()
+  
 }
 
 // cambia la imagen del banner a la siguiente en el array
