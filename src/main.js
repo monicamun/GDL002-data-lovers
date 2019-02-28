@@ -74,25 +74,22 @@ let pokemonInfoTemplate = `<div class="col-12">
 <h3>{pokemon.type}</h3>
 </div>
 </div>
-</div>
-`;
+</div>`;
 
 // asignacion de event listeners
 // botones para ocultar y mostrar pokedex
 document.getElementById("btn1").addEventListener("click", mostrar);
 document.getElementById("btn2").addEventListener("click", ocultar);
 // botones para ordenar
-document
-  .getElementById("orderABC")
-  .addEventListener("click", alphabeticalOrder);
-document.getElementById("orderNum").addEventListener("click", numericalOrder);
+document.getElementById("orderABC").addEventListener("click", alphabeticalOrder);
+document.getElementById("orderNum").addEventListener("click",numericalOrder);
 // seleccionar tipo
 document.getElementById("select-type").addEventListener("change", event => {
   resetSelect("select-weaknesses");
   displayPokemonCards(dataLovers.getPokemonByTypeFilter(event.target.value));
 let averagesShow = document.getElementById("averages");
 averagesShow.innerHTML ="El porcentaje del tipo seleccionado es:" + averages(dataLovers.getPokemonByTypeFilter(event.target.value)).toFixed(2)+"%";
-
+document.getElementById("averages").style.display = "block";
 });
 // seleccionar debilidades
 document.getElementById("select-weaknesses").addEventListener("change", event => {
@@ -100,13 +97,11 @@ document.getElementById("select-weaknesses").addEventListener("change", event =>
      displayPokemonCards( dataLovers.getPokemonByWeaknessesFilter(event.target.value));
      let averagesShow = document.getElementById("averages");
     averagesShow.innerHTML ="El porcentaje de el tipo de debilidad seleccionado es "  +   averages(dataLovers.getPokemonByWeaknessesFilter(event.target.value)).toFixed(2)+"%";
+    document.getElementById("averages").style.display = "block";
   });
 
-
 // eventos para modal
-document
-  .getElementsByClassName("close")[0]
-  .addEventListener("click", function() {
+document.getElementsByClassName("close")[0].addEventListener("click", function() {
     modal.style.display = "none";
   });
 window.addEventListener("click", function(event) {
@@ -127,9 +122,7 @@ function displayPokemonCards(pokemonArray) {
       modal.style.display = "block";
       let selectedPokemon = dataLovers.getPokemonByNum(element.id)
       modalBody.innerHTML = pokemonInfoTemplate.replace(
-        "{pokemon.img}",
-        selectedPokemon.img
-      );
+        "{pokemon.img}",selectedPokemon.img)
     });
 
      //let selectedPokemon = dataLovers.getAllPokemon()
@@ -151,6 +144,7 @@ function fillCardTemplate(pokemon) {
 
 function alphabeticalOrder() {
   resetBothSelects();
+  document.getElementById("averages").style.display = "none";
   let sortedPokemon = dataLovers.getAllPokemon().sort(function(prev, next) {
     if (prev.name > next.name) {
       return 1;
@@ -165,6 +159,7 @@ function alphabeticalOrder() {
 }
 
 function numericalOrder() {
+  document.getElementById("averages").style.display = "none";
   resetBothSelects();
   
   let numPokemon = dataLovers.getAllPokemon().sort(function(prev, next) {
@@ -184,12 +179,14 @@ function mostrar() {
   clearInterval(sliderInterval);
   document.getElementById("pokedex").style.display = "block";
   document.getElementById("ocultar").style.display = "none";
+  document.getElementById("averages").style.display = "none";
 }
 // oculta pokedex, muestra principal
 function ocultar() {
   startSliderInterval();
   document.getElementById("pokedex").style.display = "none";
   document.getElementById("ocultar").style.display = "block";
+  document.getElementById("averages").style.display = "none";
   resetSelect()
 }
 
@@ -238,9 +235,7 @@ function resetBothSelects() {
 }
 
 function averages(array) {
-
 return ( 100 * array.length)/151
-
 }
 
 //
