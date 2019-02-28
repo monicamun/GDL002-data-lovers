@@ -91,7 +91,7 @@ document.getElementById("select-type").addEventListener("change", event => {
   resetSelect("select-weaknesses");
   displayPokemonCards(dataLovers.getPokemonByTypeFilter(event.target.value));
 let averagesShow = document.getElementById("averages");
-averagesShow.innerHTML ="El porcentaje del tipo de tipo seleccionado es:"+ averages(dataLovers.getPokemonByTypeFilter(event.target.value))+"%";
+averagesShow.innerHTML ="El porcentaje del tipo seleccionado es:" + averages(dataLovers.getPokemonByTypeFilter(event.target.value)).toFixed(2)+"%";
 
 });
 // seleccionar debilidades
@@ -99,7 +99,7 @@ document.getElementById("select-weaknesses").addEventListener("change", event =>
     resetSelect("select-type");
      displayPokemonCards( dataLovers.getPokemonByWeaknessesFilter(event.target.value));
      let averagesShow = document.getElementById("averages");
-    averagesShow.innerHTML ="El porcentaje de el tipo de debilidad seleccionado es " +   averages(dataLovers.getPokemonByWeaknessesFilter(event.target.value))+"%";
+    averagesShow.innerHTML ="El porcentaje de el tipo de debilidad seleccionado es "  +   averages(dataLovers.getPokemonByWeaknessesFilter(event.target.value)).toFixed(2)+"%";
   });
 
 
@@ -166,6 +166,7 @@ function alphabeticalOrder() {
 
 function numericalOrder() {
   resetBothSelects();
+  
   let numPokemon = dataLovers.getAllPokemon().sort(function(prev, next) {
     if (prev.num > next.num) {
       return 1;
@@ -189,6 +190,7 @@ function ocultar() {
   startSliderInterval();
   document.getElementById("pokedex").style.display = "none";
   document.getElementById("ocultar").style.display = "block";
+  resetSelect()
 }
 
 // cambia la imagen del banner a la siguiente en el array
@@ -232,6 +234,7 @@ function resetSelect(selectId) {
 function resetBothSelects() {
   resetSelect("select-type");
   resetSelect("select-weaknesses");
+  
 }
 
 function averages(array) {

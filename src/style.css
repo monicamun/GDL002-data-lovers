@@ -1,6 +1,7 @@
 html{
 
-    background-image: url("imagenes pokemon/pokemon collage.jpg");
+    background-image: url("imagenes pokemon/pokemon collage.jpg") ;
+    
 }
 
 body {
@@ -109,7 +110,9 @@ h2{
 }
 
 #averages {
-    background: #fefefe;
+    background:rgb(255,255,255,0.7);
+    
+    
 
 }
 
