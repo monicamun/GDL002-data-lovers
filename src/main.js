@@ -61,6 +61,7 @@ let cardTemplate = `<div class="col-3">
 </div>
 </div>`;
 
+
 let pokemonInfoTemplate = `
 <div>
   <div id="{pokemon.number}" >
@@ -241,7 +242,7 @@ function ocultar() {
   document.getElementById("pokedex").style.display = "none";
   document.getElementById("ocultar").style.display = "block";
   document.getElementById("averages").style.display = "none";
-  resetSelect()
+  resetSelect();
 }
 
 // cambia la imagen del banner a la siguiente en el array
@@ -289,7 +290,7 @@ function resetBothSelects() {
 }
 
 function averages(array) {
-return ( 100 * array.length)/151
+return ( 100 * array.length)/151;
 }
 
 //
@@ -301,7 +302,7 @@ displayPokemonCards(dataLovers.getAllPokemon());
 // llenar el select con los tipos de pokemon
 fillSelect("select-type", typeArray);
 //llenar el select con los tipos de debilidad de pokemon
-fillSelect("select-weaknesses", typeArray);
+fillSelect("select-weaknesses", weaknessesArray);
 // empieza el intervalo al cargar el js
 startSliderInterval();
 // carga el primer banner sin esperar los 5 segundos
