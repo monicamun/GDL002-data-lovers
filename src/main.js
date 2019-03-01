@@ -80,7 +80,6 @@ let pokemonInfoTemplate = `<div>
 <h3>{pokemon.next_evolution.name}</h3>
 <h3>{pokemon.next_evolution.num}</h3>
 <img class="photoEvol" src="{pokemon.img}" alt="{pokemon.name}">
-
 </div>
 </div>
 </div>`;
@@ -129,7 +128,7 @@ function displayPokemonCards(pokemonArray) {
   Array.from(document.getElementsByClassName("card")).forEach(element => {
     element.addEventListener("click", () => {
       modal.style.display = "block";
-      let selectedPokemon = dataLovers.getPokemonByNum(element.id)
+      let selectedPokemon = dataLovers.getPokemonByNum(element.id);
       modalBody.innerHTML = pokemonInfoTemplate.replace(
         "{pokemon.img}",selectedPokemon.img).replace("{pokemon.name}", selectedPokemon.name).replace("{pokemon.name}","Nombre: " + selectedPokemon.name).replace("{pokemon.number}", selectedPokemon.num).replace("{pokemon.number}", "Número: " + selectedPokemon.num).replace("{pokemon.type}", "Es un pokemón de tipo: " + selectedPokemon.type).replace("{pokemon.debilidad}", "Su debilidad son los poquemon de tipo: " + selectedPokemon.weaknesses).replace("{pokemon.next_evolution.name}", selectedPokemon.next_evolution.map(nextEvo => nextEvo.name).join(',')).replace("{pokemon.next_evolution.num}", selectedPokemon.next_evolution.map(nextEvoNum => nextEvoNum.num).join(',')).replace("{pokemon.img}", selectedPokemon.next_evolution.img);
     });
@@ -196,7 +195,7 @@ function ocultar() {
   document.getElementById("pokedex").style.display = "none";
   document.getElementById("ocultar").style.display = "block";
   document.getElementById("averages").style.display = "none";
-  resetSelect()
+  resetSelect();
 }
 
 // cambia la imagen del banner a la siguiente en el array
@@ -244,7 +243,7 @@ function resetBothSelects() {
 }
 
 function averages(array) {
-return ( 100 * array.length)/151
+return ( 100 * array.length)/151;
 }
 
 //
@@ -256,7 +255,7 @@ displayPokemonCards(dataLovers.getAllPokemon());
 // llenar el select con los tipos de pokemon
 fillSelect("select-type", typeArray);
 //llenar el select con los tipos de debilidad de pokemon
-fillSelect("select-weaknesses", typeArray);
+fillSelect("select-weaknesses", weaknessesArray);
 // empieza el intervalo al cargar el js
 startSliderInterval();
 // carga el primer banner sin esperar los 5 segundos

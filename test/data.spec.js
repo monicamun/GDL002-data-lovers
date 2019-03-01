@@ -25,3 +25,21 @@ describe('getAllPokemon', () => {
       expect(dataLovers.getAllPokemon().length).toBe(151);
     });
   });
+
+  describe('getPokemonByTypeFilter', () => {
+    it('is a function', () => {
+      expect(typeof dataLovers.getPokemonByTypeFilter).toBe('function');
+    });
+    it('return an objet', () => {
+      expect(typeof dataLovers.getPokemonByTypeFilter()).toBe('object');
+    });
+  });
+
+  describe('getPokemonByWeaknessesFilter', () => {
+    it('is a function', () => {
+      expect(typeof dataLovers.getPokemonByWeaknessesFilter).toBe('function');
+    });
+    it('return an objet', () => {
+      expect(typeof dataLovers.getPokemonByWeaknessesFilter()).toBe('object');
+    });
+  });
