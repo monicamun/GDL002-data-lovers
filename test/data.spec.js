@@ -43,3 +43,10 @@ describe('getAllPokemon', () => {
       expect(typeof dataLovers.getPokemonByWeaknessesFilter()).toBe('object');
     });
   });
+
+  describe('getPokemonByNum', () => {
+    it('is a function', () => {
+      expect(typeof dataLovers.getPokemonByNum).toBe('function');
+    });
+
+  });
