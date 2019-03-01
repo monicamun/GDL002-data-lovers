@@ -180,12 +180,12 @@ function fillPokemonInfo(pokemon) {
       }).join(" "));;
     }
     else {
-      result = result.replace("{pokemon.next_evolutions}", "--").replace("{pokemon.next.img}","")
+      result = result.replace("{pokemon.next_evolutions}", "--").replace("{pokemon.next.img}","-- ")
     }
     if(pokemon.prev_evolution) {
-      let evolutions = pokemon.prev_evolution.map(ne => `${ne.num} ${ne.name}`).join();
+      let preEvolutions = pokemon.prev_evolution.map(ne => `${ne.num} ${ne.name}`).join();
 
-      result = result.replace("{pokemon.prev_evolutions}", evolutions).replace("{pokemon.prev.img}",pokemon.prev_evolution.map(prev => { 
+      result = result.replace("{pokemon.prev_evolutions}", preEvolutions).replace("{pokemon.prev.img}",pokemon.prev_evolution.map(prev => { 
         let prevPokemon = dataLovers.getPokemonByNum(prev.num)
         return ` <img class="pkm-thmb" src="${prevPokemon.img}">`
       }).join(" "));
