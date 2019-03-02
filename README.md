@@ -22,11 +22,9 @@ Cada día generamos 2.5 trillones de bytes de datos, una cifra sin precedentes.
 
 No obstante, los datos por sí mismos son de poca utilidad. Para que esas
 grandes cantidades de datos se conviertan en **información** fácil de leer para
-los usuarios, necesitamos entender y procesar estos datos. Una manera simple de
-hacerlo es creando _interfaces_ y _visualizaciones_.
+los usuarios, necesitamos entender y procesar estos datos. Una manera simple de hacerlo es creando _interfaces_ y _visualizaciones_.
 
-En la siguiente imagen, podrás ver cómo con la data que que se ve en la parte
-izquierda se puede construir una interfaz amigable y entendible por el usuario.
+En la siguiente imagen, podrás ver cómo con la data que que se ve en la parte izquierda se puede construir una interfaz amigable y entendible por el usuario.
 
 ![json-interfaz](https://lh4.googleusercontent.com/Tn-RPXS26pVvOTdUzRT1KVaJ-_QbFs9SpcGLxSPE43fgbHaXtFgMUInuDt7kV41DkT1j8Tt29V0LxQW7SMtC6digOIhfTXSBKdwI08wUwhD3RAqlwy0hjfmhZ2BFe91mtmCSEqysfgk)
 
@@ -39,10 +37,8 @@ En este proyecto **construirás una _página web_ para visualizar un
 _conjunto (set) de datos_** que se adecúe a lo que descubras que tu usuario
 necesita.
 
-Esta vez te proponemos una serie de datos de diferentes _temáticas_ para que
-explores y decidas con qué temática te interesa trabajar. Hemos elegido
-específicamente estos sets de datos porque creemos que se adecúan bien a esta
-etapa de tu aprendizaje.
+Esta vez te proponemos una serie de datos de diferentes _temáticas_ para que explores y decidas con qué temática te interesa trabajar. Hemos elegido
+específicamente estos sets de datos porque creemos que se adecúan bien a esta etapa de tu aprendizaje.
 
 Una vez que definas tu área de interés, entiende quién es tu usuario y qué
 necesita saber o ver exactamente; luego podrás construir la interfaz que le
@@ -54,8 +50,7 @@ Estos son datos que te proponemos:
   de algunos países (Brasil, Chile, México y Perú). Estos datos incluyen
   indicadores demográficos, económicos y comerciales.
 - [Pokémon](src/data/pokemon/pokemon.json):
-  En este set encontrarás una lista con los 151 Pokémon de la región de Kanto,
-  junto con sus respectivas estadísticas usadas en el juego [Pokémon GO](pokemongolive.com).
+  En este set encontrarás una lista con los 151 Pokémon de la región de Kanto, junto con sus respectivas estadísticas usadas en el juego [Pokémon GO](pokemongolive.com).
 - [Steam noticias](src/data/steam/steam.json):
   Lista noticias relacionadas a los videojuegos presentes en la
   plataforma de [Steam](https://store.steampowered.com/).
@@ -68,14 +63,8 @@ Estos son datos que te proponemos:
   transporte, con data anual desde 1960 y categorizada por tipo de transporte
   (aire, barco, automóvil, moto, bicicleta, ...).
 
-Como entregable final tendrás una página web que permita **visualizar la data,
-filtrarla, ordenarla y hacer algún cálculo agregado**. Como aclaración,
-con cálculo agregado nos referimos a distintos cálculos que puedes hacer con
-la data que tienes para mostrar información aún más relevante a los usuarios.
-Una opción serían cálculos estadísticos como el promedio, el máximo o el mínimo,
-por ejemplo, si tenemos una colección que representa a un grupo de personas,
-y cada persona está representada como un _objeto_ con una _propiedad_ `altura`,
-podríamos elegir calcular la altura promedio en el grupo entre otras cosas.
+Como entregable final tendrás una página web que permita **visualizar la data, filtrarla, ordenarla y hacer algún cálculo agregado**. Como aclaración, con cálculo agregado nos referimos a distintos cálculos que puedes hacer con la data que tienes para mostrar información aún más relevante a los usuarios.
+Una opción serían cálculos estadísticos como el promedio, el máximo o el mínimo, por ejemplo, si tenemos una colección que representa a un grupo de personas, y cada persona está representada como un _objeto_ con una _propiedad_ `altura`, podríamos elegir calcular la altura promedio en el grupo entre otras cosas.
 
 ## Consideraciones generales
 
@@ -86,9 +75,7 @@ podríamos elegir calcular la altura promedio en el grupo entre otras cosas.
 
 ## Objetivos de aprendizaje
 
-El objetivo principal de este proyecto es que aprendas a diseñar y construir una
-interfaz web donde se pueda visualizar y manipular data, entendiendo lo que el
-usuario necesita.
+El objetivo principal de este proyecto es que aprendas a diseñar y construir una interfaz web donde se pueda visualizar y manipular data, entendiendo lo que el usuario necesita.
 
 Dicho en palabras sencillas, aprenderás a:
 
@@ -116,9 +103,7 @@ Los criterios para considerar que has completado este proyecto son:
 
 ### Definición del producto
 
-Documenta brevemente tu trabajo en el archivo `README.md` de tu repositorio,
-contándonos cómo fue tu proceso de diseño y cómo crees que el producto resuelve
-el problema (o problemas) que tiene tu usuario.
+Documenta brevemente tu trabajo en el archivo `README.md` de tu repositorio, contándonos cómo fue tu proceso de diseño y cómo crees que el producto resuelve el problema (o problemas) que tiene tu usuario.
 
 ### Historias de usuario
 

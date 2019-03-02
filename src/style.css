@@ -1,9 +1,10 @@
 html{
-    background-image: url("imagenes pokemon/pokemon collage.jpg") ; 
+    background-image: url("imagenes pokemon/pokemon collage.jpg"); 
 }
 
 body {
   padding: 10px 5px;
+  position:relative;
 }
 
 .card:hover{
@@ -92,7 +93,6 @@ h2{
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
-    height: 100%;
     font-family: cursive, sans-serif;
   }
   /* The Close Button */
@@ -108,7 +108,6 @@ h2{
   text-decoration: none;
   cursor: pointer;
 }
-
 
 #averages {
     background:rgb(255,255,255,0.7);
@@ -194,6 +193,43 @@ p.text-banner {
 	border-color:rgb(206, 21, 52);
 }
 .to-top:hover:before{
+	transform: rotate(360deg);
+}
+
+#ancla {
+	color:black;
+	padding-top:1.8em;
+	display:inline-block;/* or block */
+  position:relative;
+  left: 80%;
+	border-color:rgb(22, 3, 3);
+  text-decoration:none;
+  text-align:center;
+  font-family: cursive, sans-serif;
+  font-size:180%;
+  margin:auto;
+	transition:all .3s ease-out;
+}
+#ancla:before {
+	content:'▲';
+	font-size:.60em;
+	position:absolute;
+	top:0%;
+	left:40%;
+	margin-left:-.9em;
+	border:solid .20em rgb(146, 231, 48);
+	border-radius:30em;
+	width:3em;
+	height:3em;
+	line-height:3em;
+	border-color:inherit;
+	transition:transform .5s ease-in;
+}
+#ancla:hover {
+	color:rgb(21, 132, 206);
+	border-color:rgb(167, 27, 27);
+}
+#ancla:hover:before {
 	transform: rotate(360deg);
 }
 
