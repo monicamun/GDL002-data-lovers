@@ -50,5 +50,8 @@ describe('getAllPokemon', () => {
     it('is a function', () => {
       expect(typeof dataLovers.getPokemonByNum).toBe('function');
     });
+    it ('return ',() => {
+      expect(dataLovers.getPokemonByNum()).toBe('num');
+    });
 
   });

@@ -64,11 +64,12 @@ let cardTemplate = `<div class="col-3">
 
 let pokemonInfoTemplate = `
 <div>
-  <div id="{pokemon.number}" >
-    <img class="pkm-thmb" src="{pokemon.img}" alt="{pokemon.name}">
-    <div class="name">
-      <h3>Nombre: {pokemon.name}</h3>
+  <div id="{pokemon.number}">
+  <div class="row">
+  <div class= "col-5">
+    <img class="pkm" src="{pokemon.img}" alt="{pokemon.name}">
     </div>
+    <div class="col-7">
     <div class="number">
       <h3>Número:  {pokemon.number}</h3>
     </div>
@@ -78,13 +79,15 @@ let pokemonInfoTemplate = `
     <div class="weaknesses">
       <h3> Su debilidad son los poquemon de tipo: {pokemon.debilidad}</h3>
     </div>
+    </div>
+    </div>
     <div class="next_evolution">
-      <h3>Evoluciones<h4>
+      <h3 class="evolutions" >Evoluciones<h4>
       {pokemon.next.img}
       <h4>{pokemon.next_evolutions}</h4>
     </div>
     <div class="prev_evolution">
-      <h3>Prevoluciones<h4>
+      <h3 class="preevolucion">Prevoluciones<h4>
       {pokemon.prev.img}
       <h4>{pokemon.prev_evolutions}</h4>
     </div>
@@ -138,8 +141,8 @@ function displayPokemonCards(pokemonArray) {
   Array.from(document.getElementsByClassName("card")).forEach(element => {
     element.addEventListener("click", () => {
       modal.style.display = "block";
-      let selectedPokemon = dataLovers.getPokemonByNum(element.id)
-      console.log('creando eventos para card')
+      let selectedPokemon = dataLovers.getPokemonByNum(element.id);
+      
       modalHeader = document.getElementById("info-modal-header").innerText = selectedPokemon.name;
       modalBody.innerHTML = fillPokemonInfo(selectedPokemon);
     });
@@ -166,7 +169,6 @@ function fillPokemonInfo(pokemon) {
   let result = pokemonInfoTemplate
   .replace("{pokemon.img}",pokemon.img)
     .replace("{pokemon.name}", pokemon.name)
-    .replace("{pokemon.name}", pokemon.name)
     .replace("{pokemon.number}", pokemon.num)
     .replace("{pokemon.number}", pokemon.num)
     .replace("{pokemon.type}",  pokemon.type)
@@ -176,22 +178,22 @@ function fillPokemonInfo(pokemon) {
       let evolutions = pokemon.next_evolution.map(ne => `${ne.num} ${ne.name}`).join();
 
       result = result.replace("{pokemon.next_evolutions}", evolutions).replace("{pokemon.next.img}",pokemon.next_evolution.map(next => { 
-        let nextPokemon = dataLovers.getPokemonByNum(next.num)
-        return ` <img class="pkm-thmb" src="${nextPokemon.img}">`
-      }).join(" "));;
+        let nextPokemon = dataLovers.getPokemonByNum(next.num);
+        return ` <img class="pkm" src="${nextPokemon.img}">`;
+      }).join(" "));
     }
     else {
-      result = result.replace("{pokemon.next_evolutions}", "--").replace("{pokemon.next.img}","-- ")
+      result = result.replace("{pokemon.next_evolutions}", "--").replace("{pokemon.next.img}","-- ");
     }
     if(pokemon.prev_evolution) {
       let preEvolutions = pokemon.prev_evolution.map(ne => `${ne.num} ${ne.name}`).join();
 
       result = result.replace("{pokemon.prev_evolutions}", preEvolutions).replace("{pokemon.prev.img}",pokemon.prev_evolution.map(prev => { 
-        let prevPokemon = dataLovers.getPokemonByNum(prev.num)
-        return ` <img class="pkm-thmb" src="${prevPokemon.img}">`
+        let prevPokemon = dataLovers.getPokemonByNum(prev.num);
+        return ` <img class="pkm" src="${prevPokemon.img}">`;
       }).join(" "));
     }else {
-      result = result.replace("{pokemon.prev_evolutions}", "--").replace("{pokemon.prev.img}","")
+      result = result.replace("{pokemon.prev_evolutions}", "--").replace("{pokemon.prev.img}","");
 
     }
     return result;
