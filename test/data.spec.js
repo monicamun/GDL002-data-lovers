@@ -52,6 +52,5 @@ describe('getAllPokemon', () => {
     });
     it ('return ',() => {
       expect(dataLovers.getPokemonByNum()).toBe('num');
-    });
-
+  
   });
