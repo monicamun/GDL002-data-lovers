@@ -77,7 +77,7 @@ let pokemonInfoTemplate = `
       <h3>Es un pokemón de tipo: {pokemon.type}</h3>
     </div>
     <div class="weaknesses">
-      <h3> Su debilidad son los poquemon de tipo: {pokemon.debilidad}</h3>
+      <h3> Su debilidad son los pokemon de tipo: {pokemon.debilidad}</h3>
     </div>
     </div>
     </div>
@@ -87,7 +87,7 @@ let pokemonInfoTemplate = `
       <h4>{pokemon.next_evolutions}</h4>
     </div>
     <div class="prev_evolution">
-      <h3 class="preevolucion">Prevoluciones<h4>
+      <h3 class="preevolutions">Preevoluciones<h4>
       {pokemon.prev.img}
       <h4>{pokemon.prev_evolutions}</h4>
     </div>
