@@ -1,6 +1,86 @@
 # Data Lovers
 
-## Índice
+### Definición del producto
+
+Primero que nada, en equipo decidimos utilizar la **data de Pokémon** porque pensamos que sería un proyecto visualmente muy divertido además de que es un tema el cual ahorita está en auge gracias a la aplicación de Pokémon Go y la película de detective pikachu.
+
+Posteriormente nos dimos a la tarea de definir ¿Quiénes serían nuestros principales usuarios?, pensar en ¿Cuál sería el objetivo de nuestros usuarios al usar nuestra página?  y por último con base a las necesidades de los usuarios pensar en ¿Qué datos incluiría nuestra página?
+Quedando de la siguiente forma:
+
+**¿Quiénes son los principales usuarios de producto?**
+
+* Adolescentes, jóvenes y adultos (que estén entre los 15 - 35 años de edad aproximadamente).
+* Personas interesadas en conocer a los Pokémon o quienes ya conocen, aprender un poco más sobre sus tipos, debilidades o conocer si un Pokémon tiene evolución o no y cual es.
+* Personas a las que les gusten los videojuegos y quizá tengan curiosidad por jugar algún tipo de juego relacionado con Pokémon.
+
+**¿Cuáles son los objetivos de estos usuarios en relación con el producto?**
+
+* Conocer más sobre habilidades, debilidades, evoluciones y características que definen a los Pokémon.
+
+**¿Cuáles son los datos más relevantes que quieren ver en la interfaz y por qué?**
+
+* Breve descripción de la información que podrán encontrar en nuestra        página.
+* Poder ordenar alfabéticamente.
+* Poder ordenar numéricamente.
+* Filtrar por tipo (agua, aire, fuego, tierra)
+* Filtrar por debilidad.
+
+**¿Cuándo utilizan o utilizarían el producto?**
+
+* Cuando un usuario del juego Pokémon Go quisiera saber que Pokémon le falta con base al tipo de los mismos.
+* Cuando algún usuario esté interesado en algún tipo de juego que este relacionado a Pokémon y pueda tener acceso rápido a la información de cada Pokémon y esto le permita seleccionar mejor su estrategia de juego.
+
+Una vez que definimos todo lo anterior mencionado, comenzamos a pensar en cómo tendría que ser el diseño de nuestra página, en nuestro caso pensamos que tenia que ser algo llamativo acorde al tema que habíamos elegido; tenía que ser visualmente agradable para el usuario para llamar  su atención, por lo que decidimos poner un fondo muy llamativo tipo collage y sobre el poner un recuadro blanco con transparencia en donde pondríamos toda la información, esto para que no se perdiera la información con el fondo principal, además decidimos agregar 2 botones para que el usuario  pudiera navegar entre nuestras 2 pantallas y pudiera regresar a cualquiera de ellas cuando lo desee.
+
+Nuestra pagina resuelve los problemas del usuario puesto que le da información específica de cada Pokémon de manera visualmente simple y divertida, al menos sobre los únicos 151 Pokémon que aparecen dentro del juego de Pokémon Go. 
+
+**Feedback**
+
+En nuestro caso recibimos algunos feedback acerca de la página y su usabilidad, tales como:
+En una primera vista en donde apenas habíamos puesto el background de collage, nos dijeron:
+
+* El fondo de pantalla es muy bonito, pero no se distinguen muy bien las imágenes de todos los Pokémon que quieren mostrar y las letras se pierden.
+
+-> Esto se resolvió una vez que pusimos el recuadro blanco con transparencia.
+
+Después una vez que habíamos agregado un recuadro con los botones y selectores para filtrar y ordenar a los Pokémon, nos comentaron lo siguiente:
+
+* Me confundí al ver los botones y los selectores todos juntos porque pensé que podía escoger todo al mismo tiempo.
+
+-> Esto se resolvió agregando una leyenda antes de los botones y selectores que dice: **Elige un tipo de vista para mostrar:**
+
+Otro de los comentarios de mejora que recibimos fue el de que una vez que llegaban hasta debajo de cualquiera de las 2 pantallas tenían que ellos volver a hacer scroll hacia arriba para volver al inicio de la página.
+
+-> Esto lo resolvimos poniendo una flecha en la parte de inferior de las vistas para que puedan dar click sobre ella y los regrese hasta el inicio de la pagina sin que ellos tengan que hacer el scroll manualmente porque era molesto para los usuarios. 
+
+
+## Checklist
+
+- [ ] Usa VanillaJS.
+- [ ] No hace uso de `this`.
+- [ ] Pasa linter (`npm pretest`)
+- [ ] Pasa tests (`npm test`)
+- [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
+      lines y branches.
+- [ ] Incluye _Definición del producto_ clara e informativa en `README.md`.
+- [ ] Incluye historias de usuario en `README.md`.
+- [ ] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
+      `README.md`.
+- [ ] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
+      en `README.md`.
+- [ ] Incluye el listado de problemas que detectaste a través de tests de
+      usabilidad en el `README.md`.
+- [ ] UI: Muestra lista y/o tabla con datos y/o indicadores.
+- [ ] UI: Permite ordenar data por uno o más campos (asc y desc).
+- [ ] UI: Permite filtrar data en base a una condición.
+
+## Checklist (Opcional)
+
+- [ ] Consume data de forma dinámica (`fetch()`).
+- [ ] Utiliza Librerías de graficas (`chart.js` ó `google chart`).
+- [ ] Cobertura de coverage al 100%.
+
+<!--## Índice
 
 - [Preámbulo](#preámbulo)
 - [Descripción](#resumen-del-proyecto)
@@ -269,7 +349,7 @@ Por ejemplo, si descomentamos la siguiente línea:
 
 ```html
 <!-- <script src="./data/worldbank/worldbank.js"></script> -->
-```
+<!--```
 
 La línea quedaría así:
 
@@ -376,7 +456,7 @@ cuando lo completes:
 | Comunicación eficaz          |
 | Presentaciones               |
 
----
+
 
 ## Pistas sobre cómo empezar a trabajar en el proyecto
 
@@ -405,7 +485,7 @@ Cuando ya estés lista para codear, te sugerimos empezar de esta manera:
    pruebas unitarias (unit tests) con el comando `npm test`.
 5. A codear se ha dicho! :rocket:
 
----
+
 
 ## Contenido de referencia
 
@@ -440,30 +520,5 @@ Cuando ya estés lista para codear, te sugerimos empezar de esta manera:
 - [Node.js](https://nodejs.org/)
 - [Jest](https://jestjs.io/)
 
----
+-->
 
-## Checklist
-
-- [ ] Usa VanillaJS.
-- [ ] No hace uso de `this`.
-- [ ] Pasa linter (`npm pretest`)
-- [ ] Pasa tests (`npm test`)
-- [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions y
-      lines y branches.
-- [ ] Incluye _Definición del producto_ clara e informativa en `README.md`.
-- [ ] Incluye historias de usuario en `README.md`.
-- [ ] Incluye _sketch_ de la solución (prototipo de baja fidelidad) en
-      `README.md`.
-- [ ] Incluye _Diseño de la Interfaz de Usuario_ (prototipo de alta fidelidad)
-      en `README.md`.
-- [ ] Incluye el listado de problemas que detectaste a través de tests de
-      usabilidad en el `README.md`.
-- [ ] UI: Muestra lista y/o tabla con datos y/o indicadores.
-- [ ] UI: Permite ordenar data por uno o más campos (asc y desc).
-- [ ] UI: Permite filtrar data en base a una condición.
-
-## Checklist (Opcional)
-
-- [ ] Consume data de forma dinámica (`fetch()`).
-- [ ] Utiliza Librerías de graficas (`chart.js` ó `google chart`).
-- [ ] Cobertura de coverage al 100%.
