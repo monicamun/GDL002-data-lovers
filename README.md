@@ -34,7 +34,7 @@ Una vez que definimos todo lo anterior mencionado, comenzamos a pensar en cómo 
 
 Nuestra pagina resuelve los problemas del usuario puesto que le da información específica de cada Pokémon de manera visualmente simple y divertida, al menos sobre los únicos 151 Pokémon que aparecen dentro del juego de Pokémon Go. 
 
-##Feedback
+## Feedback
 
 En nuestro caso recibimos algunos feedback acerca de la página y su usabilidad, tales como:
 En una primera vista en donde apenas habíamos puesto el background de collage, nos dijeron:
