@@ -106,7 +106,7 @@ document.getElementById("select-type").addEventListener("change", event => {
   resetSelect("select-weaknesses");
   displayPokemonCards(dataLovers.getPokemonByTypeFilter(event.target.value));
 let averagesShow = document.getElementById("averages");
-averagesShow.innerHTML ="El porcentaje del tipo seleccionado es:" + averages(dataLovers.getPokemonByTypeFilter(event.target.value)).toFixed(2)+"%";
+averagesShow.innerHTML ="El porcentaje de el tipo seleccionado es:" + averages(dataLovers.getPokemonByTypeFilter(event.target.value)).toFixed(2)+"%";
 document.getElementById("averages").style.display = "block";
 });
 // seleccionar debilidades
@@ -114,7 +114,8 @@ document.getElementById("select-weaknesses").addEventListener("change", event =>
     resetSelect("select-type");
      displayPokemonCards( dataLovers.getPokemonByWeaknessesFilter(event.target.value));
      let averagesShow = document.getElementById("averages");
-    averagesShow.innerHTML ="El porcentaje de el tipo de debilidad seleccionado es "  +   averages(dataLovers.getPokemonByWeaknessesFilter(event.target.value)).toFixed(2)+"%";
+     let percentage = averages(dataLovers.getPokemonByWeaknessesFilter(event.target.value)).toFixed(2);
+    averagesShow.innerHTML = `Un ${percentage}% de los pokemones son debiles contra el tipo ${event.target.value}`;
     document.getElementById("averages").style.display = "block";
   });
 
