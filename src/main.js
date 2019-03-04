@@ -143,7 +143,7 @@ function displayPokemonCards(pokemonArray) {
       modal.style.display = "block";
       let selectedPokemon = dataLovers.getPokemonByNum(element.id);
       
-      modalHeader = document.getElementById("info-modal-header").innerText = selectedPokemon.name;
+      document.getElementById("info-modal-header").innerText = selectedPokemon.name;
       modalBody.innerHTML = fillPokemonInfo(selectedPokemon);
     });
 
