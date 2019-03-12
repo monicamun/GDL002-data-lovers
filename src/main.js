@@ -62,45 +62,13 @@ let cardTemplate = `<div class="col-3">
 </div>`;
 
 
-let pokemonInfoTemplate = `
-<div>
-  <div id="{pokemon.number}">
-  <div class="row">
-  <div class= "col-5">
-    <img class="pkm" src="{pokemon.img}" alt="{pokemon.name}">
-    </div>
-    <div class="col-7">
-    <div class="number">
-      <h3>Número:  {pokemon.number}</h3>
-    </div>
-    <div class="type">
-      <h3>Es un pokemón de tipo: {pokemon.type}</h3>
-    </div>
-    <div class="weaknesses">
-      <h3> Su debilidad son los pokemon de tipo: {pokemon.debilidad}</h3>
-    </div>
-    </div>
-    </div>
-    <div class="next_evolution">
-      <h3 class="evolutions" >Evoluciones<h4>
-      {pokemon.next.img}
-      <h4>{pokemon.next_evolutions}</h4>
-    </div>
-    <div class="prev_evolution">
-      <h3 class="preevolutions">Preevoluciones<h4>
-      {pokemon.prev.img}
-      <h4>{pokemon.prev_evolutions}</h4>
-    </div>
-  </div>
-</div>`;
-
 // asignacion de event listeners
 // botones para ocultar y mostrar pokedex
 document.getElementById("btn1").addEventListener("click", mostrar);
 document.getElementById("btn2").addEventListener("click", ocultar);
 // botones para ordenar
 document.getElementById("orderABC").addEventListener("click", alphabeticalOrder);
-document.getElementById("orderNum").addEventListener("click",numericalOrder);
+document.getElementById("orderNum").addEventListener("click",numericalOrder);  
 // seleccionar tipo
 document.getElementById("select-type").addEventListener("change", event => {
   resetSelect("select-weaknesses");
@@ -167,13 +135,7 @@ function fillCardTemplate(pokemon) {
 
 // llena el modal de informacion del pokemon
 function fillPokemonInfo(pokemon) {
-  let result = pokemonInfoTemplate
-  .replace("{pokemon.img}",pokemon.img)
-    .replace("{pokemon.name}", pokemon.name)
-    .replace("{pokemon.number}", pokemon.num)
-    .replace("{pokemon.number}", pokemon.num)
-    .replace("{pokemon.type}",  pokemon.type)
-    .replace("{pokemon.debilidad}", pokemon.weaknesses);
+    let result = pokemonInfoTemplate(pokemon)
 
     if(pokemon.next_evolution) {
       let evolutions = pokemon.next_evolution.map(ne => `${ne.num} ${ne.name}`).join();

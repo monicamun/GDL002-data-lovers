@@ -8,6 +8,12 @@
     <link rel="icon" href="imagenes pokemon/007_Squirtle_icon.ico">
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="grid.css" />
+    <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous"
+  />
   </head>
   <body>
    <header>
@@ -32,28 +38,16 @@
     
    </header>
 
-    <div id="root" class="container">
+    <main id="root" class="container">
       <a id="inicio"></a>
 
-      <!-- Header -->
-      <!-- <header class="row"><img  class="col-3" src="imagenes pokemon/pokemon txt.png" alt="texto POKEMON"/>
 
-      <div class="col-3"></div>
-      <div class="col-3"></div>
-
-      <div class="col-3">
-        <a href="#contenido" ><input type="image" id="btn1" src="imagenes pokemon/Pokeball.png"  width="100px"/></a>
-
-        <a href="#inicio" ><input  type="image"  id="btn2"  src="imagenes pokemon/home-2.png" width="100px" /></a> -->
-      </div>
-      </header>
-    </div>
-
+    
     <!-- Pantalla bienvenida -->
     <div class="row">
       <div id="ocultar" class="col-12" style="display:block;">
           <div class="col-12">
-            <h1>Bienvenidos</h1>
+            <h1 >Bienvenidos</h1>
           </div>
           <div class="col-12">
             <p>En este sitio podrás descubrir más sobre tus pokemón favoritos; desde sus debilidades, fortalezas hasta su o sus evoluciones.</p><br/>
@@ -89,20 +83,23 @@
 
       <!-- Filtros y formas de ordenar -->
       <div class="ordenar">
-        <label>Elige un tipo de vista para mostrar:</label><br />
-        <button id="orderABC">Alfabetico (A-Z)</button>
-        <button id="orderNum">Númerico</button>
-        <select id="select-type">
+        <label class="row col-12">Elige un tipo de vista para mostrar:</label><br />
+        <div class="row">
+          <div class="col-1"></div>
+        <button class="ordering-button col-2" id="orderABC">Alfabetico (A-Z)</button>
+        <button class="ordering-button col-2" id="orderNum">Númerico</button>
+        <select class="col-2" id="select-type">
           <option selected="true" disabled="disabled"
             >Seleccion por tipo</option
           >
         </select>
 
-        <select id="select-weaknesses">
+        <select class="col-3" id="select-weaknesses">
           <option selected="true" disabled="disabled"
             >Seleccion por debilidad
           </option>
         </select>
+      </div>
       </div>
 
 
@@ -139,11 +136,40 @@
     </div><!--fin del modal-->
 
     </div><!--aqui cierra el div del pokedex-->
+  </main>
+    <footer class="container">
+        <section class="row">
+            <span>
+              <!--icono faceboock-->
+              <h2 class="col-4">Suiguenos en redes sociales</h2>
+              <div class="col-2"></div>
+    
+              <a class="col-2" href="http://www.faceboock.com" target="_blank">
+                <i class="fab fa-facebook-square fa-4x"></i>
+              </a>
+            </span>
+    
+            <span>
+              <!--icono twitter-->
+              <a class="col-2" href="http://www.twitter.com" target="_blank">
+                <i class="fab fa-twitter-square fa-4x"></i>
+              </a>
+            </span>
+    
+            <span>
+              <!--icono instagram-->
+              <a class="col-2" href="https://www.instagram.com/pokemon/?hl=es" target="_blank">
+                <i class="fab fa-instagram fa-4x"></i>
+              </a>
+            </span>
+        </section>
+    </footer>
   
 
   
 
   <script src="./data/pokemon/pokemon.js"></script>
+  <script src="pokemonInfoTemplate.js"></script>
   <script src="data.js"></script>
   <script src="main.js"></script>
 </body>
